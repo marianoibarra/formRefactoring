@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { BreakpointObserverService } from './services/breakpoint-observer.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'formSeccionado';
+  constructor(public bService: BreakpointObserverService) {}
 }

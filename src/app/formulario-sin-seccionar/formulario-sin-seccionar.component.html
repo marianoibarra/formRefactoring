@@ -1,0 +1,618 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <form [formGroup]="mainFormGroup">
+    <mat-tab label="Contactos" formGroupName="seccionContactos">
+      <div *matTabContent class="tab-content">
+        <mat-accordion multi>
+          <mat-expansion-panel
+            hideToggle
+            [expanded]="true"
+            formGroupName="primerContacto"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Primer contacto </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Nombre</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="nombre"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Apellido</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="apellido"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Email</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="email"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Telefono</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="telefono"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle formGroupName="segundoContacto">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Segundo contacto </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Nombre</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="nombre"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Apellido</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="apellido"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Email</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="email"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Telefono</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="telefono"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle formGroupName="tercerContacto">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Tercer contacto </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Nombre</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="nombre"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Apellido</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="apellido"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Email</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="email"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Telefono</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="telefono"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <div class="botonera">
+          <button
+            mat-raised-button
+            (click)="mainFormGroup.get('seccionContactos')?.reset()"
+          >
+            CANCELAR
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="mainFormGroup.get('seccionContactos')?.invalid"
+          >
+            GUARDAR
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Direcciones" formGroupName="seccionDirecciones">
+      <div *matTabContent class="tab-content">
+        <mat-accordion multi>
+          <mat-expansion-panel
+            hideToggle
+            [expanded]="true"
+            formGroupName="primerDireccion"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Primera dirección </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Calle</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="calle"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Numero</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="numero"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Localidad</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="localidad"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Provincia</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="provincia"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle formGroupName="segundaDireccion">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Primera dirección </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Calle</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="calle"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Numero</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="numero"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Localidad</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="localidad"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Provincia</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="provincia"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <div class="botonera">
+          <button
+            mat-raised-button
+            (click)="mainFormGroup.get('seccionDirecciones')?.reset()"
+          >
+            CANCELAR
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="mainFormGroup.get('seccionDirecciones')?.invalid"
+          >
+            GUARDAR
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Productos" formGroupName="seccionProductos">
+      <div *matTabContent class="tab-content">
+        <mat-accordion multi>
+          <mat-expansion-panel
+            hideToggle
+            [expanded]="true"
+            formGroupName="primerProducto"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Primer producto </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 3 ? 2 : 4"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Nombre</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="nombre"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Stock</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="stock"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Precio</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="precio"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Marca</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="marca"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Modelo</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="modelo"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle formGroupName="segundoProducto">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Segundo producto </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 3 ? 2 : 4"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Nombre</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="nombre"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Stock</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="stock"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Precio</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="precio"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Marca</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="marca"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Modelo</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="modelo"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle formGroupName="tercerProducto">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Tercer producto </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 3 ? 2 : 4"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Nombre</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="nombre"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Stock</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="stock"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Precio</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="precio"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Marca</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="marca"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Modelo</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="modelo"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle formGroupName="cuartoProducto">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Cuarto producto </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-grid-list
+              [cols]="bService.currentScreenSize.value < 3 ? 2 : 4"
+              rowHeight="70px"
+              gutterSize="1rem"
+            >
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Nombre</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="nombre"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Stock</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="stock"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Precio</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="precio"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Marca</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="marca"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                <mat-form-field appearance="fill" class="form-field-expandido">
+                  <mat-label>Modelo</mat-label>
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    formControlName="modelo"
+                  />
+                  <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <div class="botonera">
+          <button
+            mat-raised-button
+            (click)="mainFormGroup.get('seccionProductos')?.reset()"
+          >
+            CANCELAR
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="mainFormGroup.get('seccionProductos')?.invalid"
+          >
+            GUARDAR
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+  </form>
+</mat-tab-group>

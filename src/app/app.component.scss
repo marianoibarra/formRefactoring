@@ -1,0 +1,33 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+
+  app-formulario-sin-seccionar {
+    padding: 1rem;
+
+    &.width- {
+      &1 {
+        width: 100vw;
+      }
+      &2 {
+        width: 80vw;
+      }
+      &3 {
+        width: 70vw;
+      }
+      &4 {
+        width: 60vw;
+      }
+      &5 {
+        width: 50vw;
+      }
+    }
+  }
+}
