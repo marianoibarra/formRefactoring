@@ -1,6 +1,14 @@
 <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
   <form [formGroup]="mainFormGroup">
-    <mat-tab label="Contactos" formGroupName="seccionContactos">
+    <mat-tab formGroupName="seccionContactos">
+      <span *matTabLabel
+        >Contactos
+        <mat-icon
+          fontIcon="home"
+          *ngIf="mainFormGroup.get('seccionContactos')?.dirty"
+          >edit</mat-icon
+        >
+      </span>
       <div *matTabContent class="tab-content">
         <mat-accordion multi>
           <mat-expansion-panel
@@ -178,19 +186,32 @@
             mat-raised-button
             (click)="mainFormGroup.get('seccionContactos')?.reset()"
           >
-            CANCELAR
+            RESET
           </button>
           <button
             mat-raised-button
             color="primary"
-            [disabled]="mainFormGroup.get('seccionContactos')?.invalid"
+            [disabled]="
+              !(
+                mainFormGroup.get('seccionContactos')?.valid &&
+                mainFormGroup.get('seccionContactos')?.dirty
+              )
+            "
           >
             GUARDAR
           </button>
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="Direcciones" formGroupName="seccionDirecciones">
+    <mat-tab formGroupName="seccionDirecciones">
+      <span *matTabLabel
+        >Direcciones
+        <mat-icon
+          fontIcon="home"
+          *ngIf="mainFormGroup.get('seccionDirecciones')?.dirty"
+          >edit</mat-icon
+        >
+      </span>
       <div *matTabContent class="tab-content">
         <mat-accordion multi>
           <mat-expansion-panel
@@ -313,19 +334,32 @@
             mat-raised-button
             (click)="mainFormGroup.get('seccionDirecciones')?.reset()"
           >
-            CANCELAR
+            RESET
           </button>
           <button
             mat-raised-button
             color="primary"
-            [disabled]="mainFormGroup.get('seccionDirecciones')?.invalid"
+            [disabled]="
+              !(
+                mainFormGroup.get('seccionDirecciones')?.valid &&
+                mainFormGroup.get('seccionDirecciones')?.dirty
+              )
+            "
           >
             GUARDAR
           </button>
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="Productos" formGroupName="seccionProductos">
+    <mat-tab formGroupName="seccionProductos">
+      <span *matTabLabel
+        >Productos
+        <mat-icon
+          fontIcon="home"
+          *ngIf="mainFormGroup.get('seccionProductos')?.dirty"
+          >edit</mat-icon
+        >
+      </span>
       <div *matTabContent class="tab-content">
         <mat-accordion multi>
           <mat-expansion-panel
@@ -602,12 +636,17 @@
             mat-raised-button
             (click)="mainFormGroup.get('seccionProductos')?.reset()"
           >
-            CANCELAR
+            RESET
           </button>
           <button
             mat-raised-button
             color="primary"
-            [disabled]="mainFormGroup.get('seccionProductos')?.invalid"
+            [disabled]="
+              !(
+                mainFormGroup.get('seccionProductos')?.valid &&
+                mainFormGroup.get('seccionProductos')?.dirty
+              )
+            "
           >
             GUARDAR
           </button>

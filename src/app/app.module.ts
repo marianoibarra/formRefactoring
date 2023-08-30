@@ -15,6 +15,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, FormularioSinSeccionarComponent],
@@ -29,6 +30,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
+    MatIconModule,
     ReactiveFormsModule,
     MatTabsModule,
     MatExpansionModule,
