@@ -1,6 +1,6 @@
 # Form Refactoring
 
-Refactorizacion de un formulario de material aplicando principios SOLID y OOP
+Refactorizacion de un formulario de angular (material) aplicando principios SOLID y OOP
 
 - [ ] Detectar problemas
 - [ ] Pensar posibles soluciones
