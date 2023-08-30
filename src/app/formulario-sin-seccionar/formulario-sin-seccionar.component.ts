@@ -12,6 +12,7 @@ import { DummyEntityService } from '../services/dummy-entity.service';
 export class FormularioSinSeccionarComponent implements OnInit {
   dummyEntity: DummyEntity;
   mainFormGroup: FormGroup;
+  fetched: boolean = false;
 
   constructor(
     public bService: BreakpointObserverService,
@@ -198,12 +199,19 @@ export class FormularioSinSeccionarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dService.getDummyEntity().subscribe((res) => {
-      this.dummyEntity = res;
-      this.setContactForm();
-      this.setDirectinsForm();
-      this.setProducts();
-    });
+    this.mainFormGroup.disable();
+    this.dService
+      .getDummyEntity()
+      .subscribe((res) => {
+        this.dummyEntity = res;
+        this.setContactForm();
+        this.setDirectinsForm();
+        this.setProducts();
+      })
+      .add(() => {
+        this.fetched = true;
+        this.mainFormGroup.enable();
+      });
   }
 
   setContactForm() {
@@ -245,6 +253,8 @@ export class FormularioSinSeccionarComponent implements OnInit {
     this.mainFormGroup
       .get('seccionContactos.tercerContacto.telefono')
       ?.setValue(this.dummyEntity.contactos.tercero?.telefono);
+
+    this.mainFormGroup.get('seccionContactos')?.markAsPristine();
   }
 
   setDirectinsForm() {
@@ -273,6 +283,8 @@ export class FormularioSinSeccionarComponent implements OnInit {
     this.mainFormGroup
       .get('seccionDirecciones.segundaDireccion.provincia')
       ?.setValue(this.dummyEntity.direcciones.segunda?.provincia);
+
+    this.mainFormGroup.get('seccionDirecciones')?.markAsPristine();
   }
 
   setProducts() {
@@ -339,5 +351,7 @@ export class FormularioSinSeccionarComponent implements OnInit {
     this.mainFormGroup
       .get('seccionProductos.cuartoProducto.precio')
       ?.setValue(this.dummyEntity.productos.cuarto?.precio);
+
+    this.mainFormGroup.get('seccionProductos')?.markAsPristine();
   }
 }

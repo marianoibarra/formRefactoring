@@ -16,6 +16,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [AppComponent, FormularioSinSeccionarComponent],
@@ -36,6 +37,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatExpansionModule,
     MatGridListModule,
     LayoutModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
