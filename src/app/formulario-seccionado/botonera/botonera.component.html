@@ -1,0 +1,19 @@
+<div class="botonera">
+  <button mat-raised-button (click)="limpiarFormulario()">LIMPIAR</button>
+  <button
+    mat-raised-button
+    (click)="popularFormulario()"
+    color="accent"
+    [disabled]="!fetched"
+  >
+    POPULAR
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!(formGroup.valid && formGroup.dirty)"
+    (click)="guardarFormulario()"
+  >
+    GUARDAR
+  </button>
+</div>

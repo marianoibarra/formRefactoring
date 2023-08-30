@@ -1,0 +1,18 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab>
+    <span *matTabLabel> Contactos </span>
+    <div *matTabContent class="tab-content">
+      <app-contacto-form-section
+        #contactFormSection
+      ></app-contacto-form-section>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <span *matTabLabel> Direcciones </span>
+    <app-direccion-form-section></app-direccion-form-section>
+  </mat-tab>
+  <mat-tab>
+    <span *matTabLabel> Productos </span>
+    <app-productos-form-section></app-productos-form-section>
+  </mat-tab>
+</mat-tab-group>

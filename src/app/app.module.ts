@@ -17,9 +17,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FormularioSeccionadoComponent } from './formulario-seccionado/formulario-seccionado.component';
+import { ContactoFormSectionComponent } from './formulario-seccionado/contacto-form-section/contacto-form-section.component';
+import { DireccionFormSectionComponent } from './formulario-seccionado/direccion-form-section/direccion-form-section.component';
+import { ProductosFormSectionComponent } from './formulario-seccionado/productos-form-section/productos-form-section.component';
+import { BotoneraComponent } from './formulario-seccionado/botonera/botonera.component';
 
 @NgModule({
-  declarations: [AppComponent, FormularioSinSeccionarComponent],
+  declarations: [AppComponent, FormularioSinSeccionarComponent, FormularioSeccionadoComponent, ContactoFormSectionComponent, DireccionFormSectionComponent, ProductosFormSectionComponent, BotoneraComponent],
   imports: [
     BrowserModule,
     FormsModule,

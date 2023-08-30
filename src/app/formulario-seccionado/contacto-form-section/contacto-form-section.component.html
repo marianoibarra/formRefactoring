@@ -1,0 +1,151 @@
+<mat-accordion multi [formGroup]="seccionContactosFormGroup">
+  <mat-expansion-panel
+    hideToggle
+    [expanded]="true"
+    formGroupName="primerContacto"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Primer contacto </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="nombre" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Apellido</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="apellido"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="email" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Telefono</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="telefono"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle formGroupName="segundoContacto">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Segundo contacto </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="nombre" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Apellido</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="apellido"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="email" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Telefono</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="telefono"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle formGroupName="tercerContacto">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Tercer contacto </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="nombre" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Apellido</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="apellido"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="email" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Telefono</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="telefono"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</mat-accordion>
+<app-botonera
+  [formGroup]="seccionContactosFormGroup"
+  (onBtnClick)="onBtnClick($event)"
+></app-botonera>

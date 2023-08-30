@@ -1,0 +1,13 @@
+:host {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.tab-content {
+  padding: 1rem;
+}
+
+::ng-deep .form-field-expandido {
+  width: 100%;
+}
