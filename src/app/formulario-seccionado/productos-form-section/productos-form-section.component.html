@@ -1,1 +1,244 @@
-<p>productos-form-section works!</p>
+<mat-accordion multi [formGroup]="formGroup">
+  <mat-expansion-panel
+    hideToggle
+    [expanded]="true"
+    formGroupName="primerProducto"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Primer producto
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: formGroup.controls.primerProducto
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 3 ? 2 : 4"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="nombre" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Stock</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="stock" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Precio</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="precio" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Marca</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="marca" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Modelo</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="modelo" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle formGroupName="segundoProducto">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Segundo producto
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: formGroup.controls.segundoProducto
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 3 ? 2 : 4"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="nombre" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Stock</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="stock" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Precio</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="precio" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Marca</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="marca" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Modelo</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="modelo" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle formGroupName="tercerProducto">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Tercer producto
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: formGroup.controls.tercerProducto
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 3 ? 2 : 4"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="nombre" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Stock</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="stock" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Precio</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="precio" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Marca</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="marca" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Modelo</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="modelo" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle formGroupName="cuartoProducto">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Cuarto producto
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: formGroup.controls.cuartoProducto
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 3 ? 2 : 4"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="nombre" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Stock</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="stock" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Precio</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="precio" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Marca</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="marca" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Modelo</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="modelo" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</mat-accordion>
+<app-botonera
+  [fetched]="fetched"
+  [formGroup]="formGroup"
+  (onBtnClick)="onBtnClick($event)"
+></app-botonera>
+
+<ng-template #iconosValidadores let-formGroup="formGroup">
+  <span>
+    <mat-icon color="primary" *ngIf="formGroup?.dirty">edit</mat-icon>
+    <mat-icon color="warn" *ngIf="formGroup?.invalid && formGroup?.dirty"
+      >warning</mat-icon
+    >
+  </span>
+</ng-template>
