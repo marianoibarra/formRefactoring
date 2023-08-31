@@ -1,7 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { DummyEntity } from '../models/dummyEntity.model';
 import { DummyEntityService } from '../services/dummy-entity.service';
+import { FormSection } from './abstraccion/IFormSection.model';
 import { ContactoFormSectionComponent } from './contacto-form-section/contacto-form-section.component';
+import { DireccionFormSectionComponent } from './direccion-form-section/direccion-form-section.component';
 
 @Component({
   selector: 'app-formulario-seccionado',
@@ -13,8 +22,15 @@ export class FormularioSeccionadoComponent implements OnInit {
   fetched: boolean;
   @ViewChild(ContactoFormSectionComponent)
   contactFormSection: ContactoFormSectionComponent;
+  @ViewChild(DireccionFormSectionComponent)
+  direccionesFormSection: DireccionFormSectionComponent;
 
-  constructor(private dummyService: DummyEntityService) {}
+  @ViewChildren(FormSection) formSections: QueryList<FormSection<DummyEntity>>;
+
+  constructor(
+    private dummyService: DummyEntityService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.fetched = false;
@@ -24,21 +40,42 @@ export class FormularioSeccionadoComponent implements OnInit {
         next: (entity) => {
           this.dummyEntity = entity;
           this.popularSecciones();
+          this.habilitarCampos();
         },
       })
       .add(() => {
         this.fetched = true;
-        if (this.contactFormSection) this.contactFormSection.setFetched(true);
+        this.setFetchedDeSecciones();
       });
   }
 
   ngAfterViewInit() {
-    const a = 54;
+    this.deshabilitarCampos();
+    this.cdr.detectChanges();
   }
 
   popularSecciones() {
-    // llama al metodo que popula cada una de las secciones
-    this.contactFormSection.setDummyEntity(this.dummyEntity);
-    this.contactFormSection.popularContactForm();
+    this.formSections.forEach((fs) => {
+      fs.setDummyEntity(this.dummyEntity);
+      fs.popularFormulario();
+    });
+  }
+
+  deshabilitarCampos() {
+    this.formSections.forEach((fs) => {
+      fs.deshabilitarCampos();
+    });
+  }
+
+  habilitarCampos() {
+    this.formSections.forEach((fs) => {
+      fs.habilitarCampos();
+    });
+  }
+
+  setFetchedDeSecciones() {
+    this.formSections?.forEach((fs) => {
+      fs.setFetched(true);
+    });
   }
 }

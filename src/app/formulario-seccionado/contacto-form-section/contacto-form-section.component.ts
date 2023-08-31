@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DummyEntity } from 'src/app/models/dummyEntity.model';
 import { BreakpointObserverService } from 'src/app/services/breakpoint-observer.service';
 import { DummyEntityService } from 'src/app/services/dummy-entity.service';
+import { FormSection, IFetched } from '../abstraccion/IFormSection.model';
 import {
   BotoneraComponent,
   BotoneraEmitter,
@@ -12,14 +13,19 @@ import {
   selector: 'app-contacto-form-section',
   templateUrl: './contacto-form-section.component.html',
   styleUrls: ['./contacto-form-section.component.scss'],
+  providers: [
+    {
+      provide: FormSection,
+      useExisting: forwardRef(() => ContactoFormSectionComponent),
+    },
+  ],
 })
-export class ContactoFormSectionComponent implements OnInit {
-  fetched: boolean;
-  seccionContactosFormGroup: FormGroup;
-
+export class ContactoFormSectionComponent extends FormSection<DummyEntity> {
   constructor(public bService: BreakpointObserverService) {
-    this.seccionContactosFormGroup = new FormGroup({
-      primerContacto: new FormGroup({
+    super();
+    this.formGroup.addControl(
+      'primerContacto',
+      new FormGroup({
         nombre: new FormControl('', [
           Validators.required,
           Validators.maxLength(50),
@@ -30,8 +36,11 @@ export class ContactoFormSectionComponent implements OnInit {
         ]),
         email: new FormControl('', [Validators.required, Validators.email]),
         telefono: new FormControl('', []),
-      }),
-      segundoContacto: new FormGroup({
+      })
+    );
+    this.formGroup.addControl(
+      'segundoContacto',
+      new FormGroup({
         nombre: new FormControl('', [
           Validators.required,
           Validators.maxLength(50),
@@ -42,8 +51,11 @@ export class ContactoFormSectionComponent implements OnInit {
         ]),
         email: new FormControl('', [Validators.required, Validators.email]),
         telefono: new FormControl('', []),
-      }),
-      tercerContacto: new FormGroup({
+      })
+    );
+    this.formGroup.addControl(
+      'tercerContacto',
+      new FormGroup({
         nombre: new FormControl('', [
           Validators.required,
           Validators.maxLength(50),
@@ -54,78 +66,50 @@ export class ContactoFormSectionComponent implements OnInit {
         ]),
         email: new FormControl('', [Validators.required, Validators.email]),
         telefono: new FormControl('', []),
-      }),
-    });
+      })
+    );
   }
 
-  ngOnInit(): void {}
-
-  private _dummyEntity: DummyEntity;
-  setDummyEntity(dummyEntity: DummyEntity) {
-    this._dummyEntity = dummyEntity;
-  }
-
-  popularContactForm() {
-    this.seccionContactosFormGroup
+  popularFormulario() {
+    this.formGroup
       .get('primerContacto.nombre')
       ?.setValue(this._dummyEntity.contactos.primero?.nombre);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('primerContacto.apellido')
       ?.setValue(this._dummyEntity.contactos.primero?.apellido);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('primerContacto.email')
       ?.setValue(this._dummyEntity.contactos.primero?.mail);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('primerContacto.telefono')
       ?.setValue(this._dummyEntity.contactos.primero?.telefono);
 
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('segundoContacto.nombre')
       ?.setValue(this._dummyEntity.contactos.segundo?.nombre);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('segundoContacto.apellido')
       ?.setValue(this._dummyEntity.contactos.segundo?.apellido);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('segundoContacto.email')
       ?.setValue(this._dummyEntity.contactos.segundo?.mail);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('segundoContacto.telefono')
       ?.setValue(this._dummyEntity.contactos.segundo?.telefono);
 
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('tercerContacto.nombre')
       ?.setValue(this._dummyEntity.contactos.tercero?.nombre);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('tercerContacto.apellido')
       ?.setValue(this._dummyEntity.contactos.tercero?.apellido);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('tercerContacto.email')
       ?.setValue(this._dummyEntity.contactos.tercero?.mail);
-    this.seccionContactosFormGroup
+    this.formGroup
       .get('tercerContacto.telefono')
       ?.setValue(this._dummyEntity.contactos.tercero?.telefono);
 
-    this.seccionContactosFormGroup.get('seccionContactos')?.markAsPristine();
-  }
-
-  onBtnClick($event: BotoneraEmitter) {
-    switch ($event) {
-      case 'guardar':
-        break;
-      case 'limpiar':
-        this.seccionContactosFormGroup.reset();
-        break;
-      case 'popular':
-        this.popularContactForm();
-        break;
-    }
-  }
-
-  setFetched(state: boolean) {
-    this.fetched = state;
-  }
-
-  getFetched() {
-    return this.fetched;
+    this.formGroup.get('seccionContactos')?.markAsPristine();
   }
 }

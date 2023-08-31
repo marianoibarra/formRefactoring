@@ -1,4 +1,4 @@
-<mat-accordion multi [formGroup]="seccionContactosFormGroup">
+<mat-accordion multi [formGroup]="formGroup">
   <mat-expansion-panel
     hideToggle
     [expanded]="true"
@@ -11,7 +11,7 @@
           *ngTemplateOutlet="
             iconosValidadores;
             context: {
-              formGroup: seccionContactosFormGroup.controls.primerContacto
+              formGroup: formGroup.controls.primerContacto
             }
           "
         ></ng-container>
@@ -68,7 +68,7 @@
           *ngTemplateOutlet="
             iconosValidadores;
             context: {
-              formGroup: seccionContactosFormGroup.controls.segundoContacto
+              formGroup: formGroup.controls.segundoContacto
             }
           "
         ></ng-container>
@@ -125,7 +125,7 @@
           *ngTemplateOutlet="
             iconosValidadores;
             context: {
-              formGroup: seccionContactosFormGroup.controls.segundoContacto
+              formGroup: formGroup.controls.segundoContacto
             }
           "
         ></ng-container>
@@ -177,7 +177,7 @@
 </mat-accordion>
 <app-botonera
   [fetched]="fetched"
-  [formGroup]="seccionContactosFormGroup"
+  [formGroup]="formGroup"
   (onBtnClick)="onBtnClick($event)"
 ></app-botonera>
 

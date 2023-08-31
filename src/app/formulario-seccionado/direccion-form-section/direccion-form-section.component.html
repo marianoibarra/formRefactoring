@@ -1,1 +1,134 @@
-<p>direccion-form-section works!</p>
+<mat-accordion multi [formGroup]="formGroup">
+  <mat-expansion-panel
+    hideToggle
+    [expanded]="true"
+    formGroupName="primerDireccion"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Primera dirección
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: formGroup.controls.primerDireccion
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Calle</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="calle" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Numero</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="numero" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Localidad</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="localidad"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Provincia</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="provincia"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle formGroupName="segundaDireccion">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Segunda dirección
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: formGroup.controls.segundaDireccion
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list
+      [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
+      rowHeight="70px"
+      gutterSize="1rem"
+    >
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Calle</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="calle" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Numero</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="numero" />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Localidad</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="localidad"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill" class="form-field-expandido">
+          <mat-label>Provincia</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            formControlName="provincia"
+          />
+          <mat-error>Campo requerido</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</mat-accordion>
+<app-botonera
+  [fetched]="fetched"
+  [formGroup]="formGroup"
+  (onBtnClick)="onBtnClick($event)"
+></app-botonera>
+
+<ng-template #iconosValidadores let-formGroup="formGroup">
+  <span>
+    <mat-icon color="primary" *ngIf="formGroup?.dirty">edit</mat-icon>
+    <mat-icon color="warn" *ngIf="formGroup?.invalid && formGroup?.dirty"
+      >warning</mat-icon
+    >
+  </span>
+</ng-template>
