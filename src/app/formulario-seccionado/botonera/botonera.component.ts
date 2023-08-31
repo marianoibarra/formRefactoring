@@ -9,7 +9,7 @@ export type BotoneraEmitter = 'limpiar' | 'popular' | 'guardar';
   styleUrls: ['./botonera.component.scss'],
 })
 export class BotoneraComponent implements OnInit {
-  fetched: boolean;
+  @Input() fetched: boolean;
 
   @Input('formGroup') formGroup: FormGroup = new FormGroup({});
 

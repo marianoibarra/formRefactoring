@@ -5,7 +5,17 @@
     formGroupName="primerContacto"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title> Primer contacto </mat-panel-title>
+      <mat-panel-title>
+        Primer contacto
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: seccionContactosFormGroup.controls.primerContacto
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
     </mat-expansion-panel-header>
     <mat-grid-list
       [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
@@ -52,7 +62,17 @@
   </mat-expansion-panel>
   <mat-expansion-panel hideToggle formGroupName="segundoContacto">
     <mat-expansion-panel-header>
-      <mat-panel-title> Segundo contacto </mat-panel-title>
+      <mat-panel-title>
+        Segundo contacto
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: seccionContactosFormGroup.controls.segundoContacto
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
     </mat-expansion-panel-header>
     <mat-grid-list
       [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
@@ -99,7 +119,17 @@
   </mat-expansion-panel>
   <mat-expansion-panel hideToggle formGroupName="tercerContacto">
     <mat-expansion-panel-header>
-      <mat-panel-title> Tercer contacto </mat-panel-title>
+      <mat-panel-title>
+        Tercer contacto
+        <ng-container
+          *ngTemplateOutlet="
+            iconosValidadores;
+            context: {
+              formGroup: seccionContactosFormGroup.controls.segundoContacto
+            }
+          "
+        ></ng-container>
+      </mat-panel-title>
     </mat-expansion-panel-header>
     <mat-grid-list
       [cols]="bService.currentScreenSize.value < 2 ? 1 : 2"
@@ -146,6 +176,16 @@
   </mat-expansion-panel>
 </mat-accordion>
 <app-botonera
+  [fetched]="fetched"
   [formGroup]="seccionContactosFormGroup"
   (onBtnClick)="onBtnClick($event)"
 ></app-botonera>
+
+<ng-template #iconosValidadores let-formGroup="formGroup">
+  <span>
+    <mat-icon color="primary" *ngIf="formGroup?.dirty">edit</mat-icon>
+    <mat-icon color="warn" *ngIf="formGroup?.invalid && formGroup?.dirty"
+      >warning</mat-icon
+    >
+  </span>
+</ng-template>

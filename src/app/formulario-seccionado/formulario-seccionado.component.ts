@@ -11,7 +11,7 @@ import { ContactoFormSectionComponent } from './contacto-form-section/contacto-f
 export class FormularioSeccionadoComponent implements OnInit {
   dummyEntity: DummyEntity;
   fetched: boolean;
-  @ViewChild('contactFormSection')
+  @ViewChild(ContactoFormSectionComponent)
   contactFormSection: ContactoFormSectionComponent;
 
   constructor(private dummyService: DummyEntityService) {}
@@ -21,11 +21,24 @@ export class FormularioSeccionadoComponent implements OnInit {
     this.dummyService
       .getDummyEntity()
       .subscribe({
-        next: (entity) => (this.dummyEntity = entity),
+        next: (entity) => {
+          this.dummyEntity = entity;
+          this.popularSecciones();
+        },
       })
       .add(() => {
         this.fetched = true;
         if (this.contactFormSection) this.contactFormSection.setFetched(true);
       });
+  }
+
+  ngAfterViewInit() {
+    const a = 54;
+  }
+
+  popularSecciones() {
+    // llama al metodo que popula cada una de las secciones
+    this.contactFormSection.setDummyEntity(this.dummyEntity);
+    this.contactFormSection.popularContactForm();
   }
 }

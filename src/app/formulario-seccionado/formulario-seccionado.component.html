@@ -2,9 +2,7 @@
   <mat-tab>
     <span *matTabLabel> Contactos </span>
     <div *matTabContent class="tab-content">
-      <app-contacto-form-section
-        #contactFormSection
-      ></app-contacto-form-section>
+      <app-contacto-form-section></app-contacto-form-section>
     </div>
   </mat-tab>
   <mat-tab>
@@ -16,3 +14,7 @@
     <app-productos-form-section></app-productos-form-section>
   </mat-tab>
 </mat-tab-group>
+<mat-progress-bar
+  class="progress-bar-form"
+  [mode]="fetched ? 'determinate' : 'indeterminate'"
+></mat-progress-bar>
